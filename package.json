@@ -1,0 +1,10 @@
+{
+  "name": "chatvault-extension",
+  "version": "1.0.0",
+  "private": true,
+  "description": "100% local AI chat exporter Chrome extension for ChatGPT, Claude, Gemini & NotebookLM",
+  "scripts": {
+    "test": "bun test",
+    "pack": "zip -r dist/chatvault-v1.0.0.zip manifest.json src icons -x '*.DS_Store'"
+  }
+}

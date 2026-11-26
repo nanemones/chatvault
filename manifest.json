@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "ChatVault — Local AI Chat Exporter (Markdown & PDF)",
+  "short_name": "ChatVault",
+  "version": "1.0.0",
+  "description": "100% local, privacy-first exporter for ChatGPT, Claude, Gemini & NotebookLM. Export clean Markdown, Obsidian notes & print-ready PDFs.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.gumroad.com/*"
+  ],
+  "action": {
+    "default_popup": "src/popup.html",
+    "default_title": "ChatVault — Export AI Chat",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://claude.ai/*",
+        "https://gemini.google.com/*",
+        "https://notebooklm.google.com/*"
+      ],
+      "js": [
+        "src/html-to-md.js",
+        "src/extractors.js",
+        "src/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

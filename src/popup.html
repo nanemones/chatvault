@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatVault</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <span class="logo">CV</span>
+        <div>
+          <h1>ChatVault</h1>
+          <p class="subtitle">100% Local AI Chat Exporter</p>
+        </div>
+      </div>
+      <span id="plan-badge" class="badge badge-free">FREE</span>
+    </header>
+
+    <section id="status-banner" class="status-banner hidden"></section>
+
+    <section id="chat-meta" class="meta-card">
+      <div class="meta-row">
+        <span id="platform-pill" class="pill">Detecting...</span>
+        <span id="msg-count" class="count">0 messages</span>
+      </div>
+      <div id="chat-title" class="chat-title">Open a ChatGPT, Claude, Gemini, or NotebookLM chat</div>
+    </section>
+
+    <section id="selector-section" class="selector-section hidden">
+      <div class="selector-header">
+        <span>Messages <span class="pro-tag">PRO: Selective</span></span>
+        <div class="selector-actions">
+          <button id="select-all-btn" class="link-btn" type="button">All</button>
+          <button id="select-none-btn" class="link-btn" type="button">None</button>
+        </div>
+      </div>
+      <div id="message-list" class="message-list"></div>
+    </section>
+
+    <section class="actions">
+      <div class="action-group">
+        <button id="btn-copy-md" class="btn btn-primary" type="button">
+          Copy Clean Markdown
+        </button>
+        <button id="btn-download-md" class="btn btn-secondary" type="button">
+          Download .md
+        </button>
+      </div>
+
+      <div class="divider"><span>Pro Features — $9.99 One-Time (No Subscription)</span></div>
+
+      <div class="pro-grid">
+        <button id="btn-export-pdf" class="btn btn-pro" type="button">
+          <span>Clean PDF</span>
+          <small>No watermark</small>
+        </button>
+        <button id="btn-export-obsidian" class="btn btn-pro" type="button">
+          <span>Obsidian .md</span>
+          <small>YAML + callouts</small>
+        </button>
+        <button id="btn-export-json" class="btn btn-pro" type="button">
+          <span>JSON Archive</span>
+          <small>Structured data</small>
+        </button>
+        <select id="pdf-theme" class="theme-select" title="PDF Theme">
+          <option value="clean">PDF: Clean Light</option>
+          <option value="academic">PDF: Academic Serif</option>
+          <option value="dark">PDF: Dark Mode</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="upgrade-card" class="upgrade-card">
+      <div class="upgrade-top">
+        <div>
+          <strong>Unlock ChatVault Pro</strong>
+          <p>Pay $9.99 once. Lifetime updates. Zero servers.</p>
+        </div>
+        <a id="buy-pro-link" class="btn-buy" href="#" target="_blank" rel="noopener">Get Pro</a>
+      </div>
+      <div class="license-row">
+        <input id="license-input" type="text" placeholder="Paste Gumroad license key..." />
+        <button id="btn-activate" class="btn-activate" type="button">Activate</button>
+      </div>
+      <div id="license-msg" class="license-msg"></div>
+    </section>
+
+    <footer class="footer">
+      <span>Zero tracking • Runs 100% in your browser</span>
+      <button id="btn-deactivate" class="link-btn hidden" type="button">Remove Key</button>
+    </footer>
+  </div>
+
+  <script src="formatters.js"></script>
+  <script src="license.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
